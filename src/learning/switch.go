@@ -30,4 +30,21 @@ func main() {
 	default :
 		fmt.Printf("Too far away")
 	}
+
+	fmt.Println()
+	t := time.Now()
+	switch  {
+	case t.Hour() < 12 : fmt.Println("Good morning!")
+	case t.Hour() < 17 : fmt.Println("Good noon!")
+	default : fmt.Println("good evening!")
+	}
+
+	defer fmt.Println("World")
+	fmt.Println("Hello ")
+
+	fmt.Println("Counting..")
+	for i := 1; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+	fmt.Println("done")
 }
